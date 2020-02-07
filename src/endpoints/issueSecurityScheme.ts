@@ -3,7 +3,6 @@ import { JiraCoreApi } from '../core';
 import { IssueSecuritySchemeResult } from '../declaration';
 
 export class IssueSecuritySchemeApi extends JiraCoreApi {
-
   url: string = '/issuesecurityschemes';
 
   async getAll(): Promise<IssueSecuritySchemeResult[]> {

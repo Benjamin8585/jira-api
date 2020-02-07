@@ -2,7 +2,6 @@ import { Method, NotificationSchemePaginatedParams, NotificationSchemeResult } f
 import { JiraCoreApi } from '../core';
 
 export class NotificationSchemeApi extends JiraCoreApi {
-
   url: string = '/notificationscheme';
 
   async getPaginated(params: NotificationSchemePaginatedParams): Promise<NotificationSchemeResult[]> {

@@ -8,7 +8,6 @@ export interface JiraClientOptions {
 }
 
 export abstract class JiraCoreApi {
-
   private readonly version: string = '3';
   private readonly host: string;
   private readonly email: string;
@@ -27,7 +26,7 @@ export abstract class JiraCoreApi {
       method,
       url,
       query,
-      body
+      body,
     };
   }
 
@@ -43,12 +42,11 @@ export abstract class JiraCoreApi {
     this.instance = axios.create({
       baseURL: this.apiUrl,
       auth: { username: this.email, password: this.token },
-      headers: { 'Accept': 'application/json' }
+      headers: { Accept: 'application/json' },
     });
   }
 
   sendRequest = async (req: EndpointRequest): Promise<any> => {
     return (await this.instance(req)).data;
-  }
-
+  };
 }

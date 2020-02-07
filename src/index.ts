@@ -1,8 +1,13 @@
-import { ProjectCategoryApi, IssueSecuritySchemeApi, NotificationSchemeApi, PermissionSchemeApi, ProjectApi } from './endpoints';
+import {
+  ProjectCategoryApi,
+  IssueSecuritySchemeApi,
+  NotificationSchemeApi,
+  PermissionSchemeApi,
+  ProjectApi,
+} from './endpoints';
 import { JiraClientOptions } from './core';
 
 export class JiraClient {
-
   securityScheme: IssueSecuritySchemeApi;
   notificationScheme: NotificationSchemeApi;
   permissionScheme: PermissionSchemeApi;
@@ -16,5 +21,4 @@ export class JiraClient {
     this.project = new ProjectApi(options);
     this.projectCategory = new ProjectCategoryApi(options);
   }
-
 }

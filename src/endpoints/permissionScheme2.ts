@@ -1,8 +1,13 @@
-import { Method, PermissionSchemeCreateParams, PermissionSchemeGetAllParams, PermissionSchemeResult, PermissionSchemeUpdateParams } from '../declaration';
+import {
+  Method,
+  PermissionSchemeCreateParams,
+  PermissionSchemeGetAllParams,
+  PermissionSchemeResult,
+  PermissionSchemeUpdateParams,
+} from '../declaration';
 import { JiraCoreApi } from '../core';
 
 export class PermissionSchemeApi extends JiraCoreApi {
-
   url: string = '/permissionscheme';
 
   async getAll(params: PermissionSchemeGetAllParams): Promise<PermissionSchemeResult[]> {

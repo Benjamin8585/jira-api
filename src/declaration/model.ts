@@ -1,6 +1,5 @@
 import { Dictionary } from './index';
 
-
 export interface IssueSecuritySchemeResult {
   self: string;
   id: number;

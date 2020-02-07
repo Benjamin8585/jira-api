@@ -1,8 +1,14 @@
-import { Method, ProjectResult, ProjectSmallResult, ProjectSearchParams, ProjectCreateParams, ProjectUpdateParams } from '../declaration';
+import {
+  Method,
+  ProjectResult,
+  ProjectSmallResult,
+  ProjectSearchParams,
+  ProjectCreateParams,
+  ProjectUpdateParams,
+} from '../declaration';
 import { JiraCoreApi } from '../core';
 
 export class ProjectApi extends JiraCoreApi {
-
   url: string = '/project';
 
   async search(params: ProjectSearchParams): Promise<ProjectResult[]> {

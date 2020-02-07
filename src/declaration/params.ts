@@ -1,4 +1,3 @@
-
 export interface NotificationSchemePaginatedParams {
   startAt: number;
   maxResults: number;

@@ -3,7 +3,6 @@ import { JiraCoreApi } from '../core';
 import { ProjectCategoryCreateParams, ProjectCategoryUpdateParams, ProjectCategoryResult } from '../declaration';
 
 export class ProjectCategoryApi extends JiraCoreApi {
-
   url: string = '/projectCategory';
 
   async getAll(): Promise<ProjectCategoryResult[]> {
