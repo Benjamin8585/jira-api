@@ -22,3 +22,5 @@ export class JiraClient {
     this.projectCategory = new ProjectCategoryApi(options);
   }
 }
+
+export * from './declaration';
