@@ -1,6 +1,6 @@
 {
-  "name": "jira-api",
-  "version": "3.0.0",
+  "name": "jira-tsclient",
+  "version": "3.0.1",
   "description": "Node.js/Typescript connector for JIRA API",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Benjamin8585/jira-api.git"
+    "url": "git+https://github.com/Benjamin8585/jira-tsclient.git"
   },
   "keywords": [
     "jira",
@@ -29,9 +29,9 @@
   "author": "Benjamin Bourasseau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Benjamin8585/jira-api/issues"
+    "url": "https://github.com/Benjamin8585/jira-tsclient/issues"
   },
-  "homepage": "https://github.com/Benjamin8585/jira-api#readme",
+  "homepage": "https://github.com/Benjamin8585/jira-tsclient#readme",
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "jest": "^25.1.0",

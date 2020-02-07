@@ -25,7 +25,7 @@ export abstract class JiraCoreApi {
     }
     return {
       method,
-      url: url,
+      url,
       query,
       body
     };
