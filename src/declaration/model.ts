@@ -57,3 +57,47 @@ export interface ProjectCategoryResult {
   name: string;
   description: string;
 }
+
+export interface UserResult {
+  self: string;
+  accountId: string;
+  accountType: string; // atlassian, app, customer
+  emailAddress: string;
+  avatarUrls: any[];
+  displayName: string;
+  active: boolean;
+  timeZone: string;
+  locale: string;
+  groups: any[];
+  applicationRoles: any[];
+  expand: string;
+}
+
+export interface PageUserResult {
+  self: string;
+  maxResults: number;
+  startAt: number;
+  total: number;
+  isLast: boolean;
+  values: UserResult[]
+}
+
+export interface UserAccountIdResult {
+  username: string;
+  accountId: string;
+}
+
+export interface UserColumnResult {
+  label: string;
+  value: string;
+}
+
+export interface UserEmailResult {
+  accountId: string;
+  email: string;
+}
+
+export interface UserGroupResult {
+  name: string;
+  self: string;
+}

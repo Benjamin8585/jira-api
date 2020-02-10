@@ -20,7 +20,10 @@ export abstract class JiraCoreApi {
   endpoint(method: Method, path?: string | number, query?: any, body?: any): EndpointRequest {
     let url = this.url;
     if (path) {
-      url += '/' + path;
+      if (typeof path === "number") {
+        path = `/${path}`
+      }
+      url += path;
     }
     return {
       method,

@@ -12,7 +12,7 @@ export class ProjectApi extends JiraCoreApi {
   url: string = '/project';
 
   async search(params: ProjectSearchParams): Promise<ProjectResult[]> {
-    return (await this.sendRequest(this.endpoint(Method.GET, 'search', params))) as ProjectResult[];
+    return (await this.sendRequest(this.endpoint(Method.GET, '/search', params))) as ProjectResult[];
   }
 
   async get(id: number): Promise<ProjectResult> {

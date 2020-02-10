@@ -80,3 +80,39 @@ export interface ProjectCategoryUpdateParams {
   name?: string;
   description?: string;
 }
+
+export interface UserGetParams {
+  accountId: string;
+  expand: string; // groups, applicationRoles
+}
+
+export interface UserCreateParams {
+  password?: string;
+  emailAddress: string;
+  displayName: string;
+  notification?: boolean;
+}
+
+export interface UserBulkGetParams {
+  startAt: number;
+  maxResults: number;
+  accountId: string[];
+}
+
+export interface UserGetAccountIdsParams {
+  startAt: number;
+  maxResults: number;
+  username: string[];
+  key: string[];
+}
+
+export interface UserSetDefaultColumnsParams {
+  accountId: string;
+  '*/*': string[];
+  'multipart/form-data': string[];
+}
+
+export interface UserGetAllUsersParams {
+  startAt: number;
+  maxResults: number;
+}
