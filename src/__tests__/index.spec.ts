@@ -40,7 +40,6 @@ let projectId: number;
 
 describe('JIRAClient', () => {
 
-  console.log('Host: ', JIRA_HOST);
   const jiraAPI = new JiraService(JIRA_HOST, JIRA_EMAIL, JIRA_TOKEN);
 
   test('create project should work', async () => {
