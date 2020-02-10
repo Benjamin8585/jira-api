@@ -3,7 +3,7 @@ import {
   IssueSecuritySchemeApi,
   NotificationSchemeApi,
   PermissionSchemeApi,
-  ProjectApi,
+  ProjectApi, UserApi,
 } from './endpoints';
 import { JiraClientOptions } from './core';
 
@@ -13,6 +13,7 @@ export class JiraClient {
   permissionScheme: PermissionSchemeApi;
   project: ProjectApi;
   projectCategory: ProjectCategoryApi;
+  user: UserApi;
 
   constructor(options: JiraClientOptions) {
     this.securityScheme = new IssueSecuritySchemeApi(options);
@@ -20,6 +21,7 @@ export class JiraClient {
     this.permissionScheme = new PermissionSchemeApi(options);
     this.project = new ProjectApi(options);
     this.projectCategory = new ProjectCategoryApi(options);
+    this.user = new UserApi(options);
   }
 }
 
