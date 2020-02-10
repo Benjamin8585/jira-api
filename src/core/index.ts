@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { EndpointRequest, Method } from '../declaration';
 
-let singleton: AxiosInstance | undefined = undefined;
+let singleton: AxiosInstance | undefined;
 
 export interface JiraClientOptions {
   host: string;

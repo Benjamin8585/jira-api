@@ -15,8 +15,8 @@ export class ProjectApi extends JiraCoreApi {
     return (await this.sendRequest(this.endpoint(Method.GET, '/search', params))) as ProjectResult[];
   }
 
-  async get(id: number): Promise<ProjectResult> {
-    return (await this.sendRequest(this.endpoint(Method.GET, id))) as ProjectResult;
+  async get(id: number | string): Promise<ProjectResult> {
+    return (await this.sendRequest(this.endpoint(Method.GET, `/${id}`))) as ProjectResult;
   }
 
   async create(params: ProjectCreateParams): Promise<ProjectSmallResult> {
