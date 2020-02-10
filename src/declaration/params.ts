@@ -36,7 +36,7 @@ export interface ProjectCreateParams {
   url: string;
   assigneeType: string;
   avatarId: number;
-  issueSecurityScheme: number;
+  issueSecurityScheme?: number;
   permissionScheme: number;
   notificationScheme: number;
   categoryId: number;
