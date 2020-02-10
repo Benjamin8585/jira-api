@@ -45,7 +45,7 @@ export abstract class JiraCoreApi {
     this.instance = axios.create({
       baseURL: this.apiUrl,
       auth: { username: this.email, password: this.token },
-      headers: { Accept: 'application/json' },
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     });
   }
 
