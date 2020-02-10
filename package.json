@@ -1,12 +1,12 @@
 {
   "name": "jira-tsclient",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "Node.js/Typescript connector for JIRA API",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json --env=node",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -41,6 +41,9 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "@types/node": "^13.7.0",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.1.0"
   }
 }

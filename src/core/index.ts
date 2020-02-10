@@ -1,6 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 import { EndpointRequest, Method } from '../declaration';
 
+let singleton: AxiosInstance | undefined = undefined;
+
 export interface JiraClientOptions {
   host: string;
   email: string;
@@ -30,7 +32,7 @@ export abstract class JiraCoreApi {
       method,
       url,
       query,
-      body,
+      data: body,
     };
   }
 
@@ -43,26 +45,30 @@ export abstract class JiraCoreApi {
     this.host = host;
     this.email = email;
     this.token = token;
-    this.instance = axios.create({
-      baseURL: this.apiUrl,
-      auth: { username: this.email, password: this.token },
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    });
-    axios.interceptors.request.use(request => {
-      if (debugMode) {
-        console.log('----- JIRA-API DEBUG MODE -----');
-        console.log('Request: ', request);
-      }
-      return request;
-    });
+    if (!singleton) {
+      singleton = axios.create({
+        baseURL: this.apiUrl,
+        auth: { username: this.email, password: this.token },
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      });
+      singleton.interceptors.request.use(request => {
+        if (debugMode) {
+          console.log('----- JIRA-API DEBUG MODE -----');
+          console.log('Request: ', request);
+        }
+        return request;
+      });
 
-    axios.interceptors.response.use(response => {
-      if (debugMode) {
-        console.log('JIRA-API Response: ', response);
-        console.log('----- JIRA-API DEBUG MODE END -----');
-      }
-      return response;
-    })
+      singleton.interceptors.response.use(response => {
+        if (debugMode) {
+          console.log('Response: ', response);
+          console.log('----- JIRA-API DEBUG MODE END -----');
+        }
+        return response;
+      });
+    }
+    this.instance = singleton;
+
   }
 
   sendRequest = async (req: EndpointRequest): Promise<any> => {

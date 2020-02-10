@@ -13,7 +13,7 @@ export interface EndpointRequest {
   method: Method;
   url: string;
   query?: any;
-  body?: any;
+  data?: any;
 }
 
 export * from './params';
