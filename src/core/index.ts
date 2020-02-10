@@ -5,6 +5,7 @@ export interface JiraClientOptions {
   host: string;
   email: string;
   token: string;
+  debugMode?: boolean;
 }
 
 export abstract class JiraCoreApi {
@@ -38,7 +39,7 @@ export abstract class JiraCoreApi {
   }
 
   constructor(params: JiraClientOptions) {
-    const { host, email, token } = params;
+    const { host, email, token, debugMode } = params;
     this.host = host;
     this.email = email;
     this.token = token;
@@ -47,6 +48,21 @@ export abstract class JiraCoreApi {
       auth: { username: this.email, password: this.token },
       headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     });
+    axios.interceptors.request.use(request => {
+      if (debugMode) {
+        console.log('----- JIRA-API DEBUG MODE -----');
+        console.log('Request: ', request);
+      }
+      return request;
+    });
+
+    axios.interceptors.response.use(response => {
+      if (debugMode) {
+        console.log('JIRA-API Response: ', response);
+        console.log('----- JIRA-API DEBUG MODE END -----');
+      }
+      return response;
+    })
   }
 
   sendRequest = async (req: EndpointRequest): Promise<any> => {
