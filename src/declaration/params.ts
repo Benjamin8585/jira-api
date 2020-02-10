@@ -59,15 +59,15 @@ export interface ProjectUpdateParams {
 }
 
 export interface ProjectSearchParams {
-  startAt: number;
-  maxResults: number;
-  orderBy: string;
+  startAt?: number;
+  maxResults?: number;
+  orderBy?: string;
   query: string;
-  typeKey: string;
-  categoryId: number;
-  searchBy: string;
-  action: string;
-  expand: string;
+  typeKey?: string;
+  categoryId?: number;
+  searchBy?: string;
+  action?: string;
+  expand?: string;
 }
 
 export interface ProjectCategoryCreateParams {

@@ -24,10 +24,12 @@ export interface PermissionSchemeResult {
   description: string;
 }
 
+
 export interface ProjectResult {
   self: string;
   id: number;
   key: string;
+  name: string;
   description: string;
   lead: any;
   components: any[];
@@ -43,6 +45,16 @@ export interface ProjectResult {
   style: string;
   properties: any;
   insights: any;
+}
+
+export interface ProjectPageResult {
+  self: string;
+  nextPage: string;
+  maxResults: number;
+  startAt: number;
+  total: number;
+  isLast: boolean;
+  values: ProjectResult[];
 }
 
 export interface ProjectSmallResult {
