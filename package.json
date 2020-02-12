@@ -1,6 +1,6 @@
 {
   "name": "jira-tsclient",
-  "version": "3.0.13",
+  "version": "3.0.14",
   "description": "Node.js/Typescript connector for JIRA API",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
