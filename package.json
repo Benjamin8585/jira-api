@@ -1,6 +1,6 @@
 {
   "name": "jira-tsclient",
-  "version": "3.0.14",
+  "version": "3.0.16",
   "description": "Node.js/Typescript connector for JIRA API",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,10 +9,10 @@
     "test": "jest --config jestconfig.json --env=node",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "prepare": "yarn run build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "preversion": "yarn run lint",
+    "version": "yarn run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
   "files": [
@@ -34,14 +34,15 @@
   "homepage": "https://github.com/Benjamin8585/jira-tsclient#readme",
   "devDependencies": {
     "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
     "jest": "^25.1.0",
-    "ts-jest": "^25.2.0",
+    "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3",
+    "prettier": "^1.19.1"
   },
   "dependencies": {
-    "@types/node": "^13.7.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "dotenv-flow": "^3.1.0"
