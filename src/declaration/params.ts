@@ -31,15 +31,15 @@ export interface ProjectCreateParams {
   name: string;
   projectTypeKey: string;
   projectTemplateKey: string;
-  description: string;
+  description?: string;
   leadAccountId: string;
-  url: string;
+  url?: string;
   assigneeType: string;
   avatarId: number;
   issueSecurityScheme?: number;
-  permissionScheme: number;
-  notificationScheme: number;
-  categoryId: number;
+  permissionScheme?: number;
+  notificationScheme?: number;
+  categoryId?: number;
 }
 
 export interface ProjectUpdateParams {
@@ -47,15 +47,15 @@ export interface ProjectUpdateParams {
   expand: string;
   key?: string;
   name?: string;
-  description: string;
+  description?: string;
   leadAccountId?: string;
-  url: string;
+  url?: string;
   assigneeType: string;
-  avatarId: number;
-  issueSecurityScheme: number;
-  permissionScheme: number;
-  notificationScheme: number;
-  categoryId: number;
+  avatarId?: number;
+  issueSecurityScheme?: number;
+  permissionScheme?: number;
+  notificationScheme?: number;
+  categoryId?: number;
 }
 
 export interface ProjectSearchParams {
