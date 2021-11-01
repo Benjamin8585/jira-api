@@ -6,6 +6,7 @@ Create an `.env` file with this values:
 - `JIRA_HOST = yourhostname.atlassian.net` (without `https://`)
 - `JIRA_EMAIL = your@jira.email`
 - `JIRA_TOKEN = your_jira_token`
+- `JIRA_ACCOUNT_ID = your_account_id`
 
 Then you can run `npm run test` and the tests should work properly with your JIRA instance
 

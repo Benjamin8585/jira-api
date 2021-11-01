@@ -3,7 +3,9 @@ import {
   IssueSecuritySchemeApi,
   NotificationSchemeApi,
   PermissionSchemeApi,
-  ProjectApi, UserApi, ProjectValidationApi,
+  ProjectApi,
+  UserApi,
+  ProjectValidationApi,
 } from './endpoints';
 import { JiraClientOptions } from './core';
 

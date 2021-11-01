@@ -1,16 +1,13 @@
-import { config } from "dotenv";
+import { config } from 'dotenv';
 
 const result = config().parsed;
-const {
-  JIRA_HOST, JIRA_EMAIL, JIRA_TOKEN
-} = result as {
-  [key: string]: string,
+const { JIRA_HOST, JIRA_EMAIL, JIRA_TOKEN, JIRA_ACCOUNT_ID } = result as {
+  [key: string]: string;
 };
 
-import { JiraClient, ProjectCreateParams, ProjectSmallResult, } from '../index';
+import { JiraClient, ProjectCreateParams, ProjectSmallResult } from '../index';
 
 export class JiraService {
-
   client: JiraClient;
 
   constructor(host: string, email: string, token: string) {
@@ -21,16 +18,16 @@ export class JiraService {
     const params: ProjectCreateParams = {
       assigneeType: 'UNASSIGNED',
       avatarId: 10404,
-      categoryId: 10005,
+      // categoryId: 10000,
       description: description ?? '',
       key: key ?? name.slice(0, 3).toUpperCase(),
-      leadAccountId: '5d08e22977d0d20c2f574367',
+      leadAccountId: JIRA_ACCOUNT_ID,
       notificationScheme: 10000,
-      permissionScheme: 10009,
+      // permissionScheme: 10000, Only in paying versions
       url: url ?? '',
       name,
       projectTypeKey: 'software',
-      projectTemplateKey: 'com.pyxis.greenhopper.jira:gh-simplified-scrum-classic'
+      projectTemplateKey: 'com.pyxis.greenhopper.jira:gh-simplified-scrum-classic',
     };
     return this.client.project.create(params);
   }

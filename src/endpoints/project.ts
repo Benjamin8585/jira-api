@@ -4,7 +4,8 @@ import {
   ProjectSmallResult,
   ProjectSearchParams,
   ProjectCreateParams,
-  ProjectUpdateParams, ProjectPageResult,
+  ProjectUpdateParams,
+  ProjectPageResult,
 } from '../declaration';
 import { JiraCoreApi } from '../core';
 

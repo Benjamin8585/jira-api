@@ -24,7 +24,6 @@ export interface PermissionSchemeResult {
   description: string;
 }
 
-
 export interface ProjectResult {
   self: string;
   id: number;
@@ -91,7 +90,7 @@ export interface PageUserResult {
   startAt: number;
   total: number;
   isLast: boolean;
-  values: UserResult[]
+  values: UserResult[];
 }
 
 export interface UserAccountIdResult {

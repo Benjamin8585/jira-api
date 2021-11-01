@@ -23,8 +23,8 @@ export abstract class JiraCoreApi {
   endpoint(method: Method, path?: string | number, query?: any, body?: any): EndpointRequest {
     let url = this.url;
     if (path) {
-      if (typeof path === "number") {
-        path = `/${path}`
+      if (typeof path === 'number') {
+        path = `/${path}`;
       }
       url += path;
     }
@@ -68,7 +68,6 @@ export abstract class JiraCoreApi {
       });
     }
     this.instance = singleton;
-
   }
 
   sendRequest = async (req: EndpointRequest): Promise<any> => {
